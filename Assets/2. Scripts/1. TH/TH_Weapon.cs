@@ -9,10 +9,9 @@ public class TH_Weapon : MonoBehaviour
 
     public float damage = 1f;
 
-    // Start is called before the first frame update (처음 한번만 호출)
     void Start()
     {
-        Destroy(gameObject, 2f); // 게임오브젝트를 1초 뒤 없애줘 
+        Destroy(gameObject, 2f);
     }
 
     void Update()

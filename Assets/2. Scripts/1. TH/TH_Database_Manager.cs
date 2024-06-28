@@ -21,7 +21,7 @@ public class TH_Database_Manager : ScriptableObject
     public float SpawnInterval = 3f; // 적 출현 속도
 
 
-    [Header("아이템")]
+    [Header("아이템&폭탄")]
     public GameObject coin;
 
     public void Init_Func()

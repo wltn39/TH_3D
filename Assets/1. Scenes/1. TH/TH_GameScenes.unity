@@ -232,10 +232,11 @@ GameObject:
   - component: {fileID: 275022855}
   - component: {fileID: 275022854}
   - component: {fileID: 275022853}
-  - component: {fileID: 275022856}
+  - component: {fileID: 275022857}
+  - component: {fileID: 275022858}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,14 +323,35 @@ Transform:
   m_GameObject: {fileID: 275022852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.17, y: -2.95, z: -0.007679932}
+  m_LocalPosition: {x: -7.57, y: -7.6, z: -0.007679932}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 782628376}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &275022856
+--- !u!65 &275022857
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275022852}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15, y: 0.2, z: 0}
+  m_Center: {x: 0, y: -0.05, z: 0}
+--- !u!114 &275022858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,8 +366,8 @@ MonoBehaviour:
   explosionFactory: {fileID: 5709184673012411339, guid: 5d62e52a3672eb245ae091a0d2190301, type: 3}
   weapons:
   - {fileID: 2011657784341798371, guid: 8e0c5c0159e8bdc41bbbcffecd206e31, type: 3}
-  - {fileID: 2011657784341798371, guid: 20e6d66129ac7c748beb1aea3e298746, type: 3}
-  - {fileID: 2011657784341798371, guid: f9c6b1649505c4047ab50ce3bbdb9995, type: 3}
+  - {fileID: 2011657784341798371, guid: bf400877dc54d9440a06b456eacfc1a6, type: 3}
+  - {fileID: 2011657784341798371, guid: 8cf89181dc32f7547a718699551537b5, type: 3}
   shootTransform: {fileID: 782628376}
   playerMoveSpeed: 1
 --- !u!1 &705507993
