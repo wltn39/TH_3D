@@ -16,8 +16,14 @@ MonoBehaviour:
   shootInterval: 0.5
   clonePrefab: {fileID: 8177554066970519863, guid: 0ad4e81077e9299439354ed1263bcf6c, type: 3}
   cloneShootInterval: 0.5
-  enemies: []
-  Boss: {fileID: 0}
+  enemies:
+  - {fileID: 5633642521850860472, guid: f9b4d3d111a511548a534e82607ef1db, type: 3}
+  - {fileID: 5633642521850860472, guid: 5313468415b657748a403a2bb73d5ec8, type: 3}
+  - {fileID: 5633642521850860472, guid: 99e1cfb5d1f35874da4390b1c448a202, type: 3}
+  - {fileID: 5633642521850860472, guid: c8a6935cc8037654a821f141c08f0e92, type: 3}
+  - {fileID: 5633642521850860472, guid: c71c352533014ac40918275063bbace4, type: 3}
+  - {fileID: 5633642521850860472, guid: dc981082d0961534095b2bd2d4bbdafa, type: 3}
+  Boss: {fileID: 5633642521850860472, guid: 74bdb50c69b88204881b06fd78d8a661, type: 3}
   SpawnInterval: 3
   arrPosX:
   - -2.4

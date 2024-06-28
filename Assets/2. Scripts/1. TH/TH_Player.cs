@@ -20,13 +20,13 @@ public class TH_Player : MonoBehaviour
     private Vector3 leftCloneOffset = new Vector3(-0.5f, -1f, -1f);
     private Vector3 rightCloneOffset = new Vector3(0.5f, -1f, -1f);
 
-    // void Awake()
-    // {
-    //     leftClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + leftCloneOffset, Quaternion.identity);
-    //     leftClone.SetActive(false);
-    //     rightClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + rightCloneOffset, Quaternion.identity);
-    //     rightClone.SetActive(false);
-    // }
+    void Awake()
+    {
+        leftClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + leftCloneOffset, Quaternion.identity);
+        leftClone.SetActive(false);
+        rightClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + rightCloneOffset, Quaternion.identity);
+        rightClone.SetActive(false);
+    }
 
     void Update()
     {

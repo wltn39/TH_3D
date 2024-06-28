@@ -32,10 +32,10 @@ public class TH_EnemySpawner : MonoBehaviour
 
         while (true)
         {
-            foreach (float posX in TH_Database_Manager.Instance.arrPosX)
+            foreach (float posy in TH_Database_Manager.Instance.arrPosY)
             {
                 int index = Random.Range(0, TH_Database_Manager.Instance.enemies.Length);
-                SpawnEnemy(posX, index, moveSpeed);
+                SpawnEnemy(posy, index, moveSpeed);
             }
             spawnCount += 1;
             if (spawnCount % 3 == 0)
@@ -54,9 +54,9 @@ public class TH_EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(TH_Database_Manager.Instance.SpawnInterval);
         }
     }
-    void SpawnEnemy(float posX, int index, float moveSpeed)
+    void SpawnEnemy(float posy, int index, float moveSpeed)
     {
-        Vector3 spawnPos = new Vector3(posX, transform.position.y, transform.position.z);
+        Vector3 spawnPos = new Vector3(transform.position.x, posy, transform.position.z);
         GameObject enemyObject = Instantiate(TH_Database_Manager.Instance.enemies[index], spawnPos, Quaternion.identity);
         TH_Enemy enemy = enemyObject.GetComponent<TH_Enemy>(); // Enemy 클래스 가져와서 객체로 만들기
         enemy.SetMoveSpeed(moveSpeed);

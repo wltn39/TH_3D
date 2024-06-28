@@ -6,9 +6,7 @@ public class TH_Enemy : MonoBehaviour
 {
     public GameObject explosionFactory;
 
-    [SerializeField]
-    private float moveSpeed = 5f;
-    private float minY = -6f;
+    private float minX = -10f;
 
     [SerializeField]
     private float hp = 1f;
@@ -16,14 +14,14 @@ public class TH_Enemy : MonoBehaviour
 
     public void SetMoveSpeed(float moveSpeed)
     {
-        this.moveSpeed = moveSpeed;
+        TH_Database_Manager.Instance.EnemyMoveSpeed = moveSpeed;
 
     }
 
     void Update()
     {
-        transform.position += Vector3.down * moveSpeed * Time.deltaTime;
-        if (transform.position.y < minY)
+        transform.position += Vector3.left * TH_Database_Manager.Instance.EnemyMoveSpeed * Time.deltaTime;
+        if (transform.position.x < minX)
         {
             Destroy(gameObject);
         }
