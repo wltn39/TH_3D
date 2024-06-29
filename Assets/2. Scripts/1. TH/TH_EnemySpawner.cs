@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TH_EnemySpawner : MonoBehaviour
 {
-    // private float[] arrPosX = { -2.2f, -1.1f, 0f, 1.1f, 2.2f };       
-
-    // Start is called before the first frame update
     void Start()
     {
         StartEnemyRoutine();
@@ -14,7 +11,7 @@ public class TH_EnemySpawner : MonoBehaviour
 
     void StartEnemyRoutine()
     {
-        StartCoroutine("EnemyRoutine");
+        StartCoroutine(EnemyRoutine());
     }
 
     public void StopEnemyRoutine()
@@ -24,7 +21,7 @@ public class TH_EnemySpawner : MonoBehaviour
 
     IEnumerator EnemyRoutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);  // 초기 대기 시간
 
         float moveSpeed = 5f;
         int spawnCount = 0;
@@ -32,10 +29,15 @@ public class TH_EnemySpawner : MonoBehaviour
 
         while (true)
         {
+            // 각 적의 스폰마다 랜덤 대기 시간을 적용
             foreach (float posy in TH_Database_Manager.Instance.arrPosY)
             {
                 int index = Random.Range(0, TH_Database_Manager.Instance.enemies.Length);
                 SpawnEnemy(posy, index, moveSpeed);
+
+                // 매번 랜덤 대기 시간을 생성
+                float delayTime = Random.Range(0f, 1.5f);  // 0초에서 1.5초 사이 랜덤 대기
+                yield return new WaitForSeconds(delayTime);
             }
             spawnCount += 1;
             if (spawnCount % 3 == 0)
@@ -51,16 +53,18 @@ public class TH_EnemySpawner : MonoBehaviour
                 moveSpeed = 5f;
             }
 
-            yield return new WaitForSeconds(TH_Database_Manager.Instance.SpawnInterval);
+            // 추가 대기시간을 여기서 설정하면 매 루프의 끝에서 추가 대기가 발생합니다.
+            float endLoopDelay = Random.Range(0f, 1.5f);
+            yield return new WaitForSeconds(endLoopDelay);
         }
     }
+
     void SpawnEnemy(float posy, int index, float moveSpeed)
     {
         Vector3 spawnPos = new Vector3(transform.position.x, posy, transform.position.z);
         GameObject enemyObject = Instantiate(TH_Database_Manager.Instance.enemies[index], spawnPos, Quaternion.identity);
-        TH_Enemy enemy = enemyObject.GetComponent<TH_Enemy>(); // Enemy 클래스 가져와서 객체로 만들기
+        TH_Enemy enemy = enemyObject.GetComponent<TH_Enemy>();
         enemy.SetMoveSpeed(moveSpeed);
-
     }
 
     void SpawnBoss()
