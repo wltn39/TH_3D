@@ -13,9 +13,9 @@ public class TH_GameManager : MonoBehaviour
     private GameObject gameOverPanel;
 
     [SerializeField]
-    private TextMeshProUGUI text;
+    private TextMeshProUGUI scoreText;
     [SerializeField]
-    private TextMeshProUGUI PanelText;
+    private TextMeshProUGUI overText;
     private int coin = 0;
 
 
@@ -33,8 +33,8 @@ public class TH_GameManager : MonoBehaviour
     public void IncreaseCoin()
     {
         coin += 1;
-        text.SetText(coin.ToString());
-        PanelText.SetText(coin.ToString());
+        scoreText.SetText(coin.ToString());
+        overText.SetText(coin.ToString());
 
         if (coin % 5 == 0)
         {
@@ -65,6 +65,6 @@ public class TH_GameManager : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene("TH_GameScene");
+        SceneManager.LoadScene("TH_Game_1");
     }
 }

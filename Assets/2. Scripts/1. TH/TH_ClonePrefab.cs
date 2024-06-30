@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class TH_ClonePrefab : MonoBehaviour
 {
-    public GameObject[] weapons;
-    private int weaponIndex = 0;
-    [SerializeField]
-    private Transform shootTransform;
+    public GameObject weapon;
+
+    public Transform shootTransform;
     private float lastShotTime = 0f;
     // Update is called once per frame
     void Update()
@@ -24,12 +23,12 @@ public class TH_ClonePrefab : MonoBehaviour
     {
         if (Time.time - lastShotTime > TH_Database_Manager.Instance.cloneShootInterval)
         {
-            Instantiate(weapons[weaponIndex], shootTransform.position, Quaternion.identity);
+            Instantiate(weapon, shootTransform.position, Quaternion.identity);
             lastShotTime = Time.time;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Boss"))
         {
