@@ -36,7 +36,7 @@ public class TH_GameManager : MonoBehaviour
         scoreText.SetText(coin.ToString());
         overText.SetText(coin.ToString());
 
-        if (coin % 5 == 0)
+        if (coin % 3 == 0)
         {
             TH_Player player = FindObjectOfType<TH_Player>();
             if (player != null)

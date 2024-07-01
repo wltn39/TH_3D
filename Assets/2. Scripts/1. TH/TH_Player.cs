@@ -11,21 +11,24 @@ public class TH_Player : MonoBehaviour
     private int weaponIndex = 0;
 
     private float lastShotTime = 0f;
-    private Vector3 minBounds = new Vector3(-8.5f, -7.6f, -1f);  // 최소 좌표 경계
-    private Vector3 maxBounds = new Vector3(8f, 2f, 0f);  // 최대 좌표 경계
+    private Vector3 minBounds = new Vector3(-8.5f, -8f, -1f);  // 최소 좌표 경계
+    private Vector3 maxBounds = new Vector3(8.5f, 0.3f, 0f);  // 최대 좌표 경계
 
     // clone 
     private GameObject leftClone;
     private GameObject rightClone;
-    private Vector3 leftCloneOffset = new Vector3(-1f, -2f, 0);
-    private Vector3 rightCloneOffset = new Vector3(1f, -2f, 0);
+    private Vector3 leftCloneOffset = new Vector3(-1f, 2f, 0);
+    private Vector3 rightCloneOffset = new Vector3(-1f, 0f, 0);
 
     void Awake()
     {
-        leftClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + leftCloneOffset, Quaternion.identity);
-        leftClone.SetActive(false);
         rightClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + rightCloneOffset, Quaternion.identity);
         rightClone.SetActive(false);
+
+        leftClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + leftCloneOffset, Quaternion.identity);
+        leftClone.SetActive(false);
+
+
     }
 
     void Update()
@@ -117,7 +120,7 @@ public class TH_Player : MonoBehaviour
     void SyncClones()
     {
         leftClone.transform.position = transform.position + new Vector3(-1f, 2f, 0);
-        rightClone.transform.position = transform.position + new Vector3(-1f, -2f, 0);
+        rightClone.transform.position = transform.position + new Vector3(-1f, 0f, 0);
     }
 
     void setClone()

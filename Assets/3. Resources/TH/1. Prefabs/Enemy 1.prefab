@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06eca76aa642b34c8aa9bd13dc82aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionFactory: {fileID: 5709184673012411339, guid: 5d62e52a3672eb245ae091a0d2190301, type: 3}
+  explosionFactory: {fileID: 8194992990867289339, guid: 69949a63e7a7ffe4eba1156decc16966, type: 3}
   hp: 2
 --- !u!95 &2962833957518491712
 Animator:

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1084038107759503551}
   - component: {fileID: 1005534123126818479}
-  - component: {fileID: 1032715290046105559}
   - component: {fileID: 3701546216553654721}
+  - component: {fileID: 1032715290046105559}
   - component: {fileID: -5697968562492556832}
   - component: {fileID: 5664034670336742815}
   m_Layer: 0
@@ -95,6 +95,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3701546216553654721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082832680757002815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06eca76aa642b34c8aa9bd13dc82aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionFactory: {fileID: 8194992990867289339, guid: 69949a63e7a7ffe4eba1156decc16966, type: 3}
+  hp: 5
 --- !u!95 &1032715290046105559
 Animator:
   serializedVersion: 5
@@ -116,20 +130,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3701546216553654721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082832680757002815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06eca76aa642b34c8aa9bd13dc82aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionFactory: {fileID: 5709184673012411339, guid: 5d62e52a3672eb245ae091a0d2190301, type: 3}
-  hp: 5
 --- !u!54 &-5697968562492556832
 Rigidbody:
   m_ObjectHideFlags: 0

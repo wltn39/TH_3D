@@ -44,9 +44,10 @@ public class TH_Enemy : MonoBehaviour
                 }
                 GameObject explosion = Instantiate(explosionFactory);
                 explosion.transform.position = transform.position;
+                Vector3 Coin_position = new Vector3(transform.position.x, transform.position.y - 0.85f, transform.position.z);
 
                 Destroy(gameObject);
-                Instantiate(TH_Database_Manager.Instance.coin, transform.position, Quaternion.identity);
+                Instantiate(TH_Database_Manager.Instance.coin, Coin_position, Quaternion.identity);
 
             }
             Destroy(other.gameObject);
