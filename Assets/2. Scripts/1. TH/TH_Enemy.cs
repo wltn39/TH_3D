@@ -11,11 +11,13 @@ public class TH_Enemy : MonoBehaviour
     [SerializeField]
     private float hp = 1f;
 
+    void Start()
+    {
 
+    }
     public void SetMoveSpeed(float moveSpeed)
     {
         TH_Database_Manager.Instance.EnemyMoveSpeed = moveSpeed;
-
     }
 
     void Update()

@@ -36,7 +36,7 @@ public class TH_EnemySpawner : MonoBehaviour
                 SpawnEnemy(posy, index, moveSpeed);
 
                 // 매번 랜덤 대기 시간을 생성
-                float delayTime = Random.Range(0f, 1.5f);  // 0초에서 1.5초 사이 랜덤 대기
+                float delayTime = Random.Range(0f, 2f);  // 0초에서 2초 사이 랜덤 대기
                 yield return new WaitForSeconds(delayTime);
             }
             spawnCount += 1;
@@ -58,17 +58,18 @@ public class TH_EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(endLoopDelay);
         }
     }
-
     void SpawnEnemy(float posy, int index, float moveSpeed)
     {
         Vector3 spawnPos = new Vector3(transform.position.x, posy, transform.position.z);
-        GameObject enemyObject = Instantiate(TH_Database_Manager.Instance.enemies[index], spawnPos, Quaternion.identity);
+        Quaternion rotation = Quaternion.Euler(0, 180, 0);
+        GameObject enemyObject = Instantiate(TH_Database_Manager.Instance.enemies[index], spawnPos, rotation);
         TH_Enemy enemy = enemyObject.GetComponent<TH_Enemy>();
         enemy.SetMoveSpeed(moveSpeed);
     }
 
     void SpawnBoss()
     {
-        Instantiate(TH_Database_Manager.Instance.Boss, transform.position, Quaternion.identity);
+        Quaternion rotation = Quaternion.Euler(0, 180, 0);
+        Instantiate(TH_Database_Manager.Instance.Boss, transform.position, rotation);
     }
 }
