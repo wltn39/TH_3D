@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8599141460606310447}
   - component: {fileID: 3113718244963931763}
-  - component: {fileID: 8030546833113722401}
   - component: {fileID: -9006577580268718514}
   - component: {fileID: -1911355084608701686}
   - component: {fileID: -380939177327811109}
@@ -48,22 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06eca76aa642b34c8aa9bd13dc82aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionFactory: {fileID: 0}
-  hp: 1
---- !u!114 &8030546833113722401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5633642521850860472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06eca76aa642b34c8aa9bd13dc82aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   explosionFactory: {fileID: 5709184673012411339, guid: 5d62e52a3672eb245ae091a0d2190301, type: 3}
-  hp: 1
+  hp: 80
 --- !u!212 &-9006577580268718514
 SpriteRenderer:
   m_ObjectHideFlags: 0
