@@ -11,7 +11,7 @@ public class TH_Weapon : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 2.5f);
     }
 
     void Update()

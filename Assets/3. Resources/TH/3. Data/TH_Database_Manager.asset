@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cab229e6f7f5d4fbc4c16b4b348444, type: 3}
+  m_Name: TH_Database_Manager
+  m_EditorClassIdentifier: 
+  playerMoveSpeed: 3
+  shootInterval: 0.3
+  clonePrefab: {fileID: 7995850704016808879, guid: 4127c1115edb46048ba4fac199127dae, type: 3}
+  cloneShootInterval: 0.3
+  enemies:
+  - {fileID: 4214129339226394429, guid: ae9f230a966c17045907f6bb5c713e98, type: 3}
+  - {fileID: 2903720362964839524, guid: 6ff0d8cedcbd3ec47b950a3c970c4008, type: 3}
+  - {fileID: 3316757845301818916, guid: 04514707ed0552a429aa6af0a24899ac, type: 3}
+  - {fileID: 7193198054725615483, guid: 7e06b7c8d75f3ea499dcdf9705611247, type: 3}
+  - {fileID: 1082832680757002815, guid: 4f184b7045d362f4c8cae19889019681, type: 3}
+  - {fileID: 6234532906135811586, guid: 3f27fc308b7bcb74aae4544f68b25f84, type: 3}
+  - {fileID: 1000011411674848, guid: db6eb0be8b109d04ea6ace26eb60df6f, type: 3}
+  - {fileID: 1000010928770070, guid: 1a3f8c208d4276b45b5b04acb44fd222, type: 3}
+  - {fileID: 1000011181575560, guid: 2ff11a67b2cf93e4b8da0aa4b8c1dede, type: 3}
+  EnemyMoveSpeed: 6
+  arrPosY:
+  - 2
+  - -0.5
+  - -3
+  - -5.5
+  - -7
+  Boss: {fileID: 7852823541865840265, guid: 74bdb50c69b88204881b06fd78d8a661, type: 3}
+  SpawnInterval: 3
+  coin: {fileID: 5224665160703637594, guid: 374ba1441d91e9941b46add0b71d6a11, type: 3}

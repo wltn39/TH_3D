@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TH_Coin : MonoBehaviour
 {
-    public Transform shootTransform;
+    public Transform coinTransform;
 
     private float destroyTime = 5f; // 오브젝트가 사라질 시간 (초)
 
