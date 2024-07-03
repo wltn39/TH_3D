@@ -46,7 +46,7 @@ public class TH_EnemySpawner : MonoBehaviour
                 moveSpeed += 1;
             }
 
-            if (enemyIndex >= TH_Database_Manager.Instance.enemies.Length)
+            if (enemyIndex >= TH_Database_Manager.Instance.BossSpawn)
             {
                 SpawnBoss();
                 enemyIndex = 0;
@@ -70,6 +70,7 @@ public class TH_EnemySpawner : MonoBehaviour
     void SpawnBoss()
     {
         Quaternion rotation = Quaternion.Euler(0, 180, 0);
-        Instantiate(TH_Database_Manager.Instance.Boss, transform.position, rotation);
+        Vector3 bossSpawnPos = new Vector3(transform.position.x, 0f, transform.position.z);
+        Instantiate(TH_Database_Manager.Instance.Boss, bossSpawnPos, rotation);
     }
 }

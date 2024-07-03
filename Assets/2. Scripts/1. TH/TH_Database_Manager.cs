@@ -19,6 +19,7 @@ public class TH_Database_Manager : ScriptableObject
     public float[] arrPosY = { -2.4f, -1.5f, -0.6f, 0.3f, 1.2f, 2.1f }; // 적 출현 좌표
     public GameObject Boss;
     public float SpawnInterval = 3f; // 적 출현 속도
+    public float BossSpawn = 5f;
 
 
     [Header("아이템&폭탄")]

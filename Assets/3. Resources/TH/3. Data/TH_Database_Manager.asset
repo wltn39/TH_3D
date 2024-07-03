@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 1000011411674848, guid: db6eb0be8b109d04ea6ace26eb60df6f, type: 3}
   - {fileID: 1000010928770070, guid: 1a3f8c208d4276b45b5b04acb44fd222, type: 3}
   - {fileID: 1000011181575560, guid: 2ff11a67b2cf93e4b8da0aa4b8c1dede, type: 3}
-  EnemyMoveSpeed: 6
+  EnemyMoveSpeed: 5
   arrPosY:
   - 2
   - -0.5
@@ -35,4 +35,5 @@ MonoBehaviour:
   - -7
   Boss: {fileID: 7852823541865840265, guid: 74bdb50c69b88204881b06fd78d8a661, type: 3}
   SpawnInterval: 3
+  BossSpawn: 5
   coin: {fileID: 5224665160703637594, guid: 374ba1441d91e9941b46add0b71d6a11, type: 3}
