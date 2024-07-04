@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TH_Player : MonoBehaviour
 {
@@ -20,6 +21,16 @@ public class TH_Player : MonoBehaviour
     private Vector3 leftCloneOffset = new Vector3(-1f, 1f, 0);
     private Vector3 rightCloneOffset = new Vector3(-1f, -1f, 0);
 
+    public Button upButton;
+    public Button downButton;
+    public Button leftButton;
+    public Button rightButton;
+
+    private Animator upButtonAnimator;
+    private Animator downButtonAnimator;
+    private Animator leftButtonAnimator;
+    private Animator rightButtonAnimator;
+
     void Start()
     {
         rightClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + rightCloneOffset, Quaternion.identity);
@@ -27,6 +38,11 @@ public class TH_Player : MonoBehaviour
 
         leftClone = Instantiate(TH_Database_Manager.Instance.clonePrefab, transform.position + leftCloneOffset, Quaternion.identity);
         leftClone.SetActive(false);
+
+        upButtonAnimator = upButton.GetComponent<Animator>();
+        downButtonAnimator = downButton.GetComponent<Animator>();
+        leftButtonAnimator = leftButton.GetComponent<Animator>();
+        rightButtonAnimator = rightButton.GetComponent<Animator>();
     }
 
     void Update()
@@ -47,39 +63,67 @@ public class TH_Player : MonoBehaviour
 
     void Move()
     {
-
         float move_UpDown = 0f;
         float move_LeftRight = 0f;
 
+        // 위쪽 이동 처리
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
+            Debug.Log("DownKey pressed");
             move_UpDown = 1f; // 위로 이동
+            upButton.onClick.Invoke(); // 위 버튼 클릭
+            upButtonAnimator.SetTrigger("PressTrigger"); // 위 버튼 애니메이션 트리거
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
+        {
+            Debug.Log("UpKey pressed");
+            upButtonAnimator.ResetTrigger("PressTrigger");
+            upButtonAnimator.SetTrigger("KeyupTrigger");
         }
 
+
+        // 아래쪽 이동 처리
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            move_UpDown = -1f; // 아래 이동
+            move_UpDown = -1f; // 아래로 이동
+            downButton.onClick.Invoke(); // 아래 버튼 클릭
+            downButtonAnimator.SetTrigger("PressTrigger");
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
+        {
+            downButtonAnimator.ResetTrigger("PressTrigger");
+            downButtonAnimator.SetTrigger("KeyupTrigger");
         }
 
+        // 왼쪽 이동 처리
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            move_LeftRight = -1f; // 왼쪽 이동
+            move_LeftRight = -1f; // 왼쪽으로 이동
+            leftButton.onClick.Invoke(); // 왼쪽 버튼 클릭
+            leftButtonAnimator.SetTrigger("PressTrigger");
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
+        {
+            leftButtonAnimator.ResetTrigger("PressTrigger");
+            leftButtonAnimator.SetTrigger("KeyupTrigger");
         }
 
+        // 오른쪽 이동 처리
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            move_LeftRight = 1f; // 오른쪽 이동
+            move_LeftRight = 1f; // 오른쪽으로 이동
+            rightButton.onClick.Invoke(); // 오른쪽 버튼 클릭
+            rightButtonAnimator.SetTrigger("PressTrigger"); // 오른쪽 버튼 애니메이션 트리거
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
+        {
+            rightButtonAnimator.ResetTrigger("PressTrigger");
+            rightButtonAnimator.SetTrigger("KeyupTrigger");
         }
 
         // 입력값에 따라 플레이어 이동
         Vector3 move = new Vector3(move_LeftRight, move_UpDown, 0);
         transform.position += move * TH_Database_Manager.Instance.playerMoveSpeed * Time.deltaTime;
-
-
-        // 마우스 or 터치 이동 (태블릿 테스트용)햣
-        // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // float toX = Mathf.Clamp(mousePos.x, -2.35f, 2.35f);
-        // transform.position = new Vector3(toX, transform.position.y, transform.position.z);
     }
 
     void Shoot()
@@ -106,6 +150,7 @@ public class TH_Player : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
     public void Upgrade()
     {
         weaponIndex += 1;
@@ -115,6 +160,7 @@ public class TH_Player : MonoBehaviour
         }
         setClone();
     }
+
     void SyncClones()
     {
         leftClone.transform.position = transform.position + new Vector3(-1f, 1f, 0);
@@ -140,6 +186,4 @@ public class TH_Player : MonoBehaviour
             return;
         }
     }
-
 }
-
