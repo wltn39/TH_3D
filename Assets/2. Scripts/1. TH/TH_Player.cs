@@ -69,14 +69,14 @@ public class TH_Player : MonoBehaviour
         // 위쪽 이동 처리
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            Debug.Log("DownKey pressed");
+            // Debug.Log("DownKey pressed");
             move_UpDown = 1f; // 위로 이동
             upButton.onClick.Invoke(); // 위 버튼 클릭
             upButtonAnimator.SetTrigger("PressTrigger"); // 위 버튼 애니메이션 트리거
         }
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
         {
-            Debug.Log("UpKey pressed");
+            // Debug.Log("UpKey pressed");
             upButtonAnimator.ResetTrigger("PressTrigger");
             upButtonAnimator.SetTrigger("KeyupTrigger");
         }
